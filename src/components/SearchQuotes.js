@@ -1,3 +1,7 @@
 export default function() {
-  <h1>Search Quotes</h1>
+  return(
+    <div className="col">
+      <h1>Search Quotes</h1>
+    </div>
+)
 }
