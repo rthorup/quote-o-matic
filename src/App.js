@@ -16,20 +16,15 @@ function reducer(state, action) {
     switch(action.type) {
       case 'homepage':
        return {page: 'homepage'}
-       break;
       case 'random':
         return {page: 'random'}
-        break;
       case 'character':
         return{page: 'character'}
-        break;
       case 'search':
         return {page: 'search'}
-        break;
       default:
         console.log('not working')
         return;
-        break;
     };
   };
 
