@@ -3,9 +3,9 @@ import './App.css';
 import React, {useReducer} from 'react';
 
 import {Intro} from  './components/Header.js';
-import Random from './components/RandomQuote.js';
-import Character from './components/CharacterQoute.js';
-import Search from './components/SearchQuotes.js';
+// import Random from './components/RandomQuote.js';
+// import Character from './components/CharacterQoute.js';
+// import Search from './components/SearchQuotes.js';
 
 
 function App() {
