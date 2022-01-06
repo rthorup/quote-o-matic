@@ -26,6 +26,10 @@ function reducer(state, action) {
       case 'search':
         return {page: 'search'}
         break;
+      default:
+        console.log('not working')
+        return;
+        break;
     };
   };
 
