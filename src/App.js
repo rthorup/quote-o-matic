@@ -5,7 +5,7 @@ import React, {useReducer} from 'react';
 import {Intro} from  './components/Header.js';
 import RandomQuote from './components/RandomQuote.js';
 import CharacterQuote from './components/CharacterQoute.js';
-import Search from './components/SearchQuotes.js';
+import SearchQuote from './components/SearchQuotes.js';
 
 
 function App() {
@@ -39,21 +39,21 @@ const[state, dispatch] = useReducer(reducer, initialState);
         <div className="row vh-100 text-center">
           <div className="col-md py-3" onClick={() => dispatch({type: 'random'})}>
             <h2 className="actionText">Get a random quote from some meatbag or what not</h2>
-            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://fwotaddicts.files.wordpress.com/2018/02/image48.jpg"/>
+            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://fwotaddicts.files.wordpress.com/2018/02/image48.jpg" alt="array of dozens of prominent Futurama characters. Clicking here gives you a random quote from a random character."/>
           </div>
           <div className="col-md py-3" onClick={() => dispatch({type: 'character'})}>
             <h2 className="actionText">Get a quote from your favoriate character.</h2>
-            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thedisinsider.com/wp-content/uploads/2021/02/futurama.jpg" />
+            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thedisinsider.com/wp-content/uploads/2021/02/futurama.jpg" alt={"Fry yelling woo-hoo. Clicking here lets you select a Futurama character to get a quote."}/>
           </div>
           <div className="col-md py-3" onClick={() => dispatch({type: 'search'})}>
             <h2 className="actionText">Seach for one of your favorite Futurama quotes</h2>
-            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thatshelf.com/wp-content/uploads/2014/07/Futurama-Fry.jpg"/>
+            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thatshelf.com/wp-content/uploads/2014/07/Futurama-Fry.jpg" alt="Fry thinking really hard. Clicking here lets you search for a particular Futuram quote."/>
           </div>
         </div> : <></>
       }
       {state.page === 'random' ? <RandomQuote dispatch={dispatch} />: null}
       {state.page === 'character' ? <CharacterQuote dispatch={dispatch} />: null}
-      {state.page === 'search' ? <h1>search</h1>: null}
+      {state.page === 'search' ? <SearchQuote />: null}
       </div>
     </div>
   );

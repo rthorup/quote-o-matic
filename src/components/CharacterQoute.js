@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const CharacterQuote = (props) => {
   const [allCharacters, setAllCharacters] = useState([])
-  const [selectedCharacter, setSelectedCharacter] = useState([]);
+  // const [selectedCharacter, setSelectedCharacter] = useState([]);
 
   useEffect(() => {
     axios.get('https://futuramaapi.herokuapp.com/api/v2/characters ').then((res) => {
@@ -19,7 +19,7 @@ const CharacterQuote = (props) => {
         {allCharacters.map((item) => {
           return(
             <div className="col-xs-12, col-sm-6 col-md-4 col-lg-3 mx-auto my-auto text-center characterGrid mx-5 p-5">
-              <img className="img-fluid gridImages mx-auto my-auto" src={item.PicUrl} />
+              <img className="img-fluid gridImages mx-auto my-auto" src={item.PicUrl} alt={props.Name} />
               <h3 className="font-weight-bold">{item.Name}</h3>
             </div>
           )
