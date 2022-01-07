@@ -8,13 +8,13 @@ import ImageAndQuote from './ImageAndQuote.js';
 
 
 const IndividualQuote = (props) => {
-
+  const charName = props.character;
   const [character, setCharacter] = useState("");
   const [quote, setQuote] = useState("");
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    axios.get(`https://futuramaapi.herokuapp.com/api/characters/${props.character}/1`)
+    axios.get(`https://futuramaapi.herokuapp.com/api/characters/${charName}/1`)
     .then((res) => {
       const {character, image, quote} = res.data[0];
       setCharacter(character)
