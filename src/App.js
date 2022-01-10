@@ -38,22 +38,22 @@ const[state, dispatch] = useReducer(reducer, initialState);
       {state.page === 'homepage' ?
         <div className="row vh-100 text-center">
           <div className="col-md py-3" onClick={() => dispatch({type: 'random'})}>
-            <h2 className="actionText">Get a random quote from some meatbag or what not</h2>
+            <h2 className="actionText">Get a random quote from some meatbag or what not.</h2>
             <img className="img-fluid rounded mx-auto d-block actionImages" src="https://fwotaddicts.files.wordpress.com/2018/02/image48.jpg" alt="array of dozens of prominent Futurama characters. Clicking here gives you a random quote from a random character."/>
           </div>
           <div className="col-md py-3" onClick={() => dispatch({type: 'character'})}>
             <h2 className="actionText">Get a quote from your favoriate character.</h2>
-            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thedisinsider.com/wp-content/uploads/2021/02/futurama.jpg" alt={"Fry yelling woo-hoo. Clicking here lets you select a Futurama character to get a quote."}/>
+            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://s31242.pcdn.co/wp-content/uploads/2021/02/Screenshot-2021-02-23-at-17.jpg" alt={"Bender posing as Coilette after his robot sex change. Clicking here lets you select a Futurama character to get a quote."}/>
           </div>
           <div className="col-md py-3" onClick={() => dispatch({type: 'search'})}>
-            <h2 className="actionText">Seach for one of your favorite Futurama quotes</h2>
-            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thatshelf.com/wp-content/uploads/2014/07/Futurama-Fry.jpg" alt="Fry thinking really hard. Clicking here lets you search for a particular Futuram quote."/>
+            <h2 className="actionText">Seach for one of your favorite Futurama characters.</h2>
+            <img className="img-fluid rounded mx-auto d-block actionImages" src="https://thatshelf.com/wp-content/uploads/2014/07/Futurama-Fry.jpg" alt="Fry thinking really hard. Clicking here lets you search for a particular Futuram character."/>
           </div>
         </div> : <></>
       }
       {state.page === 'random' ? <RandomQuote dispatch={dispatch} />: null}
       {state.page === 'character' ? <CharacterQuote dispatch={dispatch} />: null}
-      {state.page === 'search' ? <SearchQuote />: null}
+      {state.page === 'search' ? <SearchQuote dispatch={dispatch} />: null}
       </div>
     </div>
   );
