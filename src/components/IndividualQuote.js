@@ -16,7 +16,7 @@ const IndividualQuote = (props) => {
 
   useEffect((arr = props.character) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    axios.get(`https://futuramaapi.herokuapp.com/api/characters/${charName}/1`)
+    axios.get(`${props.baseUrl}api/characters/${charName}/1`)
     .then((res) => {
       const {character, image, quote} = res.data[0];
       setCharacter(character)
@@ -24,11 +24,11 @@ const IndividualQuote = (props) => {
       setImage(image);
 
     })
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [props.character]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const getNewQuoteByCharacter = (character) => {
     character = character.character.split(/[\s]+/).join("-");
-    axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/1`)
+    axios.get(`${props.baseUrl}api/characters/${character}/1`)
     .then((res) => {
       const {character, quote, image} = res.data[0];
       console.log('fired')

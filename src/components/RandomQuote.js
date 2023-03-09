@@ -10,7 +10,7 @@ const RandomQuote  = (props) => {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    axios.get('https://futuramaapi.herokuapp.com/api/quotes/1')
+    axios.get(`${props.baseUrl}api/quotes/1`)
     .then((res) => {
       const {character, quote, image} = res.data[0];
       console.log('fired')
@@ -22,10 +22,9 @@ const RandomQuote  = (props) => {
 
   const getNewQuoteByCharacter = (character) => {
     character = character.character.split(/[\s]+/).join("-");
-    axios.get(`https://futuramaapi.herokuapp.com/api/characters/${character}/1`)
+    axios.get(`${props.baseUrl}api/characters/${character}/1`)
     .then((res) => {
       const {character, quote, image} = res.data[0];
-      console.log('fired')
       setCharacter(character);
       setQuote(quote);
       setImage(image)
@@ -33,10 +32,9 @@ const RandomQuote  = (props) => {
   }
 
   const getNewRandomQuote = () => {
-    axios.get('https://futuramaapi.herokuapp.com/api/quotes/1')
+    axios.get(`${props.baseUrl}api/quotes/1`)
     .then((res) => {
       const {character, quote, image} = res.data[0];
-      console.log('fired')
       setCharacter(character);
       setQuote(quote);
       setImage(image);

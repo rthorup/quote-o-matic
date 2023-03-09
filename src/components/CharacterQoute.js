@@ -10,7 +10,7 @@ const CharacterQuote = (props) => {
   const [individualQuote, setIndividualQuote] = useState(false);
 
   useEffect(() => {
-    axios.get('https://futuramaapi.herokuapp.com/api/quotes/500 ').then((res) => {
+    axios.get(`${props.baseUrl}api/quotes/500`).then((res) => {
 
       let newArray = res.data.filter((value, index, self) =>
         index === self.findIndex((t) => (
@@ -31,7 +31,7 @@ const CharacterQuote = (props) => {
       {selectedCharacter && individualQuote ?
           <div>
             <button  className="btn btn-outline-dark" onClick={() => setIndividualQuote()}>Back</button>
-            <IndividualQuote character={selectedCharacter} />
+            <IndividualQuote character={selectedCharacter} baseUrl={props.baseUrl}/>
           </div>
           :
           <div>

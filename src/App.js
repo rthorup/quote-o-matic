@@ -11,6 +11,7 @@ import SearchQuote from './components/SearchQuotes.js';
 function App() {
 
 const initialState = {page: 'homepage'};
+const baseUrl = 'https://futurama-api.fly.dev/'
 
 function reducer(state, action) {
     switch(action.type) {
@@ -51,9 +52,9 @@ const[state, dispatch] = useReducer(reducer, initialState);
           </div>
         </div> : <></>
       }
-      {state.page === 'random' ? <RandomQuote dispatch={dispatch} />: null}
-      {state.page === 'character' ? <CharacterQuote dispatch={dispatch} />: null}
-      {state.page === 'search' ? <SearchQuote dispatch={dispatch} />: null}
+      {state.page === 'random' ? <RandomQuote dispatch={dispatch} baseUrl={baseUrl} />: null}
+      {state.page === 'character' ? <CharacterQuote dispatch={dispatch} baseUrl={baseUrl}/>: null}
+      {state.page === 'search' ? <SearchQuote dispatch={dispatch} baseUrl={baseUrl}/>: null}
       </div>
     </div>
   );
