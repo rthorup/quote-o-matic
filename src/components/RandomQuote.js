@@ -18,7 +18,7 @@ const RandomQuote  = (props) => {
       setQuote(quote);
       setImage(image);
     })
-  }, [])
+  }, [props.baseUrl])
 
   const getNewQuoteByCharacter = (character) => {
     character = character.character.split(/[\s]+/).join("-");

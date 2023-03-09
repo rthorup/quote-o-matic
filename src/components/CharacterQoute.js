@@ -22,7 +22,7 @@ const CharacterQuote = (props) => {
     .then((newArray) => {
       setAllCharacters(newArray)
     })
-  }, [])
+  }, [props.baseUrl])
 
 
   return(
